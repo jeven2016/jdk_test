@@ -1,0 +1,59 @@
+//Global project information
+ext.projectInfo = [
+    'group'              : 'zjtech',
+    'version'            : '0.1',
+    'sourceCompatibility': '1.8',
+    'targetCompatibility': '1.8'
+]
+
+//The libraries used for project
+ext.libs = [
+    // plugins
+    'spring-boot-gradle-plugin'             : 'org.springframework.boot:spring-boot-gradle-plugin:1.5.9.RELEASE',
+    'dependency-management-plugin'          : 'io.spring.gradle:dependency-management-plugin:1.0.2.RELEASE',
+    'spring-cloud-contract-gradle-plugin'   : 'org.springframework.cloud:spring-cloud-contract-gradle-plugin:1.1.1.RELEASE',
+    'sonarqube-gradle-plugin'               : 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.5',
+
+    //spring boot dependencies
+    'spring-boot-starter-web'               : 'org.springframework.boot:spring-boot-starter-web',
+    'spring-boot-starter-data-jpa'          : 'org.springframework.boot:spring-boot-starter-data-jpa',
+    'spring-boot-starter-aop'               : 'org.springframework.boot:spring-boot-starter-aop',
+    'spring-boot-starter-security'          : 'org.springframework.boot:spring-boot-starter-security',
+    'spring-boot-starter-actuator'          : 'org.springframework.boot:spring-boot-starter-actuator',
+    'spring-boot-starter-cache'             : 'org.springframework.boot:spring-boot-starter-cache',
+    'spring-boot-starter-tomcat'            : 'org.springframework.boot:spring-boot-starter-tomcat',
+    'spring-boot-starter-data-redis'        : 'org.springframework.boot:spring-boot-starter-data-redis',
+
+    /*spring cloud*/
+    'spring-cloud-dependencies'             : 'org.springframework.cloud:spring-cloud-dependencies:Edgware.RELEASE',
+    'avro'                                  : 'org.apache.avro:avro:1.8.2',
+    'spring-cloud-starter-stream-kafka'     : 'org.springframework.cloud:spring-cloud-starter-stream-kafka',
+    'spring-cloud-stream-schema'            : 'org.springframework.cloud:spring-cloud-stream-schema',
+    'spring-cloud-starter-contract-verifier': 'org.springframework.cloud:spring-cloud-starter-contract-verifier',
+    'spring-cloud-sleuth-stream'            : 'org.springframework.cloud:spring-cloud-sleuth-stream',
+    'spring-cloud-starter-sleuth'           : 'org.springframework.cloud:spring-cloud-starter-sleuth',
+    'spring-cloud-starter-zipkin'           : 'org.springframework.cloud:spring-cloud-starter-zipkin',
+
+    //dependencyManagement imports
+    'platform-bom'                          : 'io.spring.platform:platform-bom:Brussels-SR6',
+
+    'mysql'                                 : 'mysql:mysql-connector-java',
+    'lombok'                                : 'org.projectlombok:lombok:1.16.16',
+    'h2-database'                           : 'com.h2database:h2',
+
+    //swagger documentation
+    'springfox-swagger2'                    : 'io.springfox:springfox-swagger2:2.7.0',
+    'springfox-swagger-ui'                  : 'io.springfox:springfox-swagger-ui:2.7.0',
+
+    //for unit test
+    'powermock-module-junit4'               : 'org.powermock:powermock-module-junit4:1.7.0RC4',
+    'powermock-api-mockito2'                : 'org.powermock:powermock-api-mockito2:1.7.0RC4',
+    'powermock-module-junit4-rule-agent'    : 'org.powermock:powermock-module-junit4-rule-agent:1.6.6',
+    'spring-boot-starter-test'              : 'org.springframework.boot:spring-boot-starter-test',
+    'spring-security-test'                  : 'org.springframework.security:spring-security-test',
+    'spring-cloud-stream-test-support'      : 'org.springframework.cloud:spring-cloud-stream-test-support'
+]
+
+//set the version of mockito to V2.x for powermock since the spring framework still uses an old version v1.x
+//that cannot meet our requirements
+ext['mockito.version'] = '2.8.9'

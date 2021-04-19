@@ -1,8 +1,9 @@
-
 plugins {
-    id 'java'
-    id 'org.springframework.boot' version '2.4.4'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+  id 'java'
+  id 'org.springframework.boot' version '2.4.4'
+  id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+
+  id "me.champeau.gradle.jmh" version "0.5.3" //JMH
 }
 
 apply from: 'dependencies.gradle'
@@ -12,24 +13,31 @@ group 'zjtech'
 version '1.0-SNAPSHOT'
 
 repositories {
-    maven {
-        //then try to retrieve jars from nexus
-        url nexusPublicUrl
-    }
-    jcenter()
+//    maven {
+//        //then try to retrieve jars from nexus
+//        url nexusPublicUrl
+//    }
+  jcenter()
 }
 
 dependencies {
-    implementation 'org.javassist:javassist:3.18.1-GA'
-    implementation 'com.alibaba:fastjson:1.2.4'
-    implementation 'org.hibernate:hibernate-validator:6.0.8.Final'
+  implementation 'org.javassist:javassist:3.18.1-GA'
+  implementation 'com.alibaba:fastjson:1.2.4'
+  implementation 'org.hibernate:hibernate-validator:7.0.1.Final'
 //  compile 'org.doomdark:com.springsource.org.doomdark.uuid:1.1.2'
-    implementation 'com.fasterxml.uuid:java-uuid-generator:3.1.5'
-    implementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
-    implementation 'org.junit.jupiter:junit-jupiter-engine'
-    compile libs.'spring-boot-starter-web'
+  implementation 'com.fasterxml.uuid:java-uuid-generator:4.0.1'
+  implementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+  implementation 'org.junit.jupiter:junit-jupiter-engine'
+  implementation libs.'spring-boot-starter-web'
+  compileOnly('org.projectlombok:lombok:1.18.20')
+  annotationProcessor('org.projectlombok:lombok')
+
+  implementation 'org.openjdk.jmh:jmh-core:1.29'
+  implementation 'org.openjdk.jmh:jmh-generator-annprocess:1.29'
 }
 
 test {
-    useJUnitPlatform()
+  useJUnitPlatform {
+    includeEngines 'junit-jupiter'
+  }
 }

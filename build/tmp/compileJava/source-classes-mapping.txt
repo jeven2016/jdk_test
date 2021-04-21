@@ -110,10 +110,8 @@ compiler/IPerson.java
  compiler.IPerson
 bean_validation/EmployeeValidation.java
  bean_validation.EmployeeValidation
-concurrent/lock/LockCondition.java
- concurrent.lock.LockCondition
- concurrent.lock.LockCondition$1
- concurrent.lock.LockCondition$2
+concurrent/lock/StampedLockTest.java
+ concurrent.lock.StampedLockTest
 concurrent/lock/synchronizedTest.java
  concurrent.lock.synchronizedTest
  concurrent.lock.synchronizedTest$1
@@ -203,8 +201,10 @@ expression/Person.java
 core/AliasForAttributeTest.java
  core.AliasForAttributeTest
  core.MyConfig
-concurrent/cyclick/CyclickBarrierTest.java
- concurrent.cyclick.CyclickBarrierTest
+concurrent/lock/LockCondition.java
+ concurrent.lock.LockCondition
+ concurrent.lock.LockCondition$1
+ concurrent.lock.LockCondition$2
 visitor/PersonTest.java
  visitor.PersonTest
 concurrent/executor/ScheduleThreadTest.java
@@ -246,3 +246,7 @@ jmh/StringBuilderBenchmark.java
  jmh.StringBuilderBenchmark
 concurrent/atomic/LongAddrTest.java
  concurrent.atomic.LongAddrTest
+concurrent/cyclick/CyclickBarrierTest.java
+ concurrent.cyclick.CyclickBarrierTest
+concurrent/CountDownLatchTest2.java
+ concurrent.CountDownLatchTest2
